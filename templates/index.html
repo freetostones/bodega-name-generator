@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +18,12 @@
     <div>
       <h1>Bodega Name Generator</h1>
       <h3>What's your name my guy?</h3>
-      <input type=text></input>
+      <form method="POST" action="{{ url_for('form') }}">
+        {{ form.csrf_token }}
+        {{ form.name }}
+        <input type=text id="name"></input>
+        <button type="button" onclick="generate()">TOMA!</button>
+      </form>
     </div>
   </body>
-
 </html>
